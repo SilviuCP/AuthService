@@ -10,7 +10,7 @@ import java.sql.Statement;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DatabaseHandlers {
+public class DatabaseConnector {
   
   private static Connection connection = null;// DatabaseHandlers.connectToDB();
   

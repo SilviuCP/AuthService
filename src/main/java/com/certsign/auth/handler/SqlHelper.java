@@ -1,17 +1,15 @@
 package com.certsign.auth.handler;
 
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class SqlHelper {
   
-  private DatabaseHandlers _databaseHandlers;
+  private DatabaseConnector _databaseHandlers;
   
   public boolean checkCredentials(String username, String password) throws SQLException {
     System.out.println("Checking credetials");
