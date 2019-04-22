@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class TokenController {
   
   @ResponseBody
-  @RequestMapping(value = "/token", method = RequestMethod.GET, produces = "text/plain")
+  @RequestMapping(value = "/token", method = RequestMethod.GET, produces = "application/json; charset=UTF-8")
   public boolean checkToken(String token) {
     // check token with DB
     return true;

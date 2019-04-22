@@ -1,0 +1,20 @@
+#Eclipse stuff
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+.groovy/
+#Do not exclude the jre/bin
+!/libs/jre6/bin/
+
+#Gradle stuff
+.gradle/
+build/
+
+# Vim swap files
+*.swp
+
+#HsqlLogs
+hsqldb-2.4.1/hsqldb/hsqldb/*
+

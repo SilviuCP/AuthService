@@ -17,10 +17,10 @@ public class SqlHelper {
       ResultSet st = null;
       try (PreparedStatement ps = _databaseHandlers.getConnection().prepareStatement(sql)) {
         st = ps.executeQuery();
-        if (st != null) {
-          return true;
-        } else {
+        if (st.next() == false) {
           return false;
+        } else {
+          return true;
         }
       } catch (Exception e) {
         e.printStackTrace();
