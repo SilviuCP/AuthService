@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.certsign.auth.communication.JsonUtils;
 import com.certsign.auth.communication.LoginResponse;
-import com.certsign.auth.communication.ResponseImpl;
 import com.certsign.auth.handler.AuthenticationHandler;
-import com.google.common.collect.ImmutableMap;
-import com.google.gson.Gson;
 
 
 @Controller
@@ -34,6 +31,7 @@ public class LoginController {
     if(_token.get("loginResponse") == "SUCCESSFUL") {
       response.setSuccessful(true);
       response.setToken(_token.get("token"));
+      response.setBalance(Double.parseDouble(_token.get("balance")));
     }else if(_token.get("loginResponse") == "FAILED") {
       response.setSuccessful(false);
       response.setMessage("Invalid Token");

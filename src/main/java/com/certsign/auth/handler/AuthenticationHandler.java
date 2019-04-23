@@ -23,9 +23,11 @@ public class AuthenticationHandler {
     try {
       if(_sqlHelper.checkCredentials(username, password)) {
         token = generateToken();
+        _sqlHelper.writeTokenToDB(token, username);
         loginRequestResponse.put("loginResponse", "SUCCESSFUL");
         loginRequestResponse.put("token", token);
-        _sqlHelper.writeTokenToDB(token, username);
+        String balance = _sqlHelper.getBalance(token).toString();
+        loginRequestResponse.put("balance", balance);
         return loginRequestResponse;
       }
     } catch (Exception e) {
